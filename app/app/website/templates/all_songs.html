@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+    <div id="table-container">
+        <h1>All songs on our portal</h1>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Date</th>
+                    <th>UserID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr class="styled-tr" onclick="redirectToPage('/song_details/{{ row[0] }}')">
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<style>
+    .styled-tr {
+      background-color: #ffffff;
+    }
+    .styled-tr:hover,
+    .styled-tr:focus {
+      background-color: #950000;
+    }
+  </style>
+{% endblock %}

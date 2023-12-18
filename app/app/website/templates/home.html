@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<button class="btn btn-primary" onclick="redirectToPage('/add_song')">Add a new song</button>
+<br/>------------------------
+<p>
+<button class="btn btn-primary" onclick="redirectToPage('/all_songs')">All Songs</button>
+<button class="btn btn-primary" onclick="redirectToPage('/my_library')">My Library</button>
+</p>
+
+<h4 align="center">
+  Add new Songs to expand the library of collected Songs!
+</h4>
+
+{% endblock %}

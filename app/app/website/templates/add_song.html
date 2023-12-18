@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+
+<h1>HERE YOU CAN ADD A SONG TO YOUR LIBRARY</h1>
+
+<form method="POST">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      placeholder="Enter title"
+    />
+  </div>
+  <div class="form-group">
+    <label for="artist">Artist</label>
+    <input
+      type="text"
+      class="form-control"
+      id="artist"
+      name="artist"
+      placeholder="Please enter artist"
+    />
+  </div>
+  <textarea name="song" id="song" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Song</button>
+  </div>
+</form>
+
+{% endblock %}

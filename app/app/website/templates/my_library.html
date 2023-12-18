@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+
+    <h3>Here are all the songs in your library:</h3>
+
+    {% if not user.songs %}
+
+    <h4>It seems like you don't have any songs. Add them...</h4>
+
+    {% endif %}
+
+    <ul class="list-group list-group-flush" id="songs">
+        {% for song in user.songs %}
+        <li class="list-group-item" style="border-bottom: 1px solid #ccc">
+        <p>Title: {{song.title}}</p>
+        <p>Artist: {{song.artist}}</p>
+
+        <pre>{{ song.data }}</pre>
+
+        <button type="button" class="close" onClick="deleteSong({{ song.id }})">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
